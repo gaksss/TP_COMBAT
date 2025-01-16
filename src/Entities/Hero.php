@@ -8,7 +8,7 @@ final class Hero
     private int $id;
     private string $name;
     private int $hp = 50;
-    private string $skin_path = '../public/assets/img/Nain.jpg';
+    private string $skin_path = './assets/img/Nain.jpg';
 
     
 
