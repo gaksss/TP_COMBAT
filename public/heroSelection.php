@@ -2,12 +2,15 @@
 include_once '../utils/autoloader.php';
 require_once '../utils/db.php';
 
-
+session_start();
 
 
 $manager = new FightsManager();
 
 $hero = $manager->getHeroInfo();
+
+
+
 
 ?>
 
@@ -24,7 +27,10 @@ $hero = $manager->getHeroInfo();
 
 <body>
     <main>
+        <h1>Bienvenue <?= $_SESSION['user'] ?>, choisi ton héro</h1>
         <?= $manager->generateDisplay($hero) ?>
+
+       
     </main>
 </body>
 

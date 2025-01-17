@@ -7,8 +7,8 @@ final class Hero
 
     private int $id;
     private string $name;
-    private int $hp = 50;
-    private string $skin_path = './assets/img/Nain.jpg';
+    private int $hp;
+    private string $skin_path;
 
     
 
@@ -18,7 +18,6 @@ final class Hero
         $this->name = $name;
         $this->hp = $hp;
         $this->skin_path = $skin_path;
-        
     }
 
     /**
@@ -76,5 +75,7 @@ final class Hero
     {
         return $this->skin_path;
     }
-
+    
+    
+    
 }
