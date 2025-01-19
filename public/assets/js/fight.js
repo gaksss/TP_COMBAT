@@ -9,8 +9,7 @@ function handleAttack(event) {
   // Partie qui fait des dégats aléatoires au monstre
   let monsterHpStr = monsterHp.textContent;
   let first2MonsterHp = parseInt(monsterHpStr.slice(0, 2), 10);
- let randomHeroAd = Math.floor(Math.random() * 20)
-
+  let randomHeroAd = Math.floor(Math.random() * 20);
 
   if (first2MonsterHp > 0) {
     first2MonsterHp = Math.max(first2MonsterHp - randomHeroAd, 0); // Ensure it doesn't go below 0
@@ -26,9 +25,26 @@ function handleAttack(event) {
 
   let heroHpStr = heroHp.textContent;
   let first2HeroHp = parseInt(heroHpStr.slice(0, 2), 10);
-
+  console.log(randomHeroAd);
   if (first2HeroHp > 0) {
     first2HeroHp = Math.max(first2HeroHp - first2MonsterAdStr, 0); // Ensure it doesn't go below 0
     heroHp.textContent = first2HeroHp + heroHpStr.slice(2); // Update the text content
+
+    // Si les PV du monstre tombent a 0: stop combat
+
+    if (first2MonsterHp <= 0) {
+      console.log("Fini");
+      attackButton.setAttribute("disabled", "disabled");
+      setTimeout(() => {
+        alert("Le HERO a gagné");
+        
+      }, 2);
+    } else if (first2HeroHp <= 0) {
+      console.log("Fini");
+      attackButton.setAttribute("disabled", "disabled");
+      setTimeout(() => {
+        alert("Le HERO a perdu");
+      }, 2);
+    }
   }
 }

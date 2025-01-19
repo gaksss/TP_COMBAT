@@ -10,7 +10,7 @@ final class Hero
     private int $hp;
     private string $skin_path;
 
-    
+
 
     public function __construct(int $id, string $name, int $hp, string $skin_path)
     {
@@ -23,7 +23,7 @@ final class Hero
     /**
      * Get the value of name
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
@@ -33,7 +33,7 @@ final class Hero
      *
      * @return  self
      */
-    public function setName($name)
+    public function setName($name): self
     {
         $this->name = $name;
 
@@ -43,15 +43,15 @@ final class Hero
     /**
      * Get the value of id
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
 
     /**
      * Get the value of hp
-     */ 
-    public function getHp()
+     */
+    public function getHp(): int
     {
         return $this->hp;
     }
@@ -60,22 +60,19 @@ final class Hero
      * Set the value of hp
      *
      * @return  self
-     */ 
-    public function setHp($hp)
+     */
+    public function setHp($hp): self
     {
         $this->hp = $hp;
 
         return $this;
     }
 
-     /**
+    /**
      * Get the value of skin_path
      */
-    public function getSkin_path()
+    public function getSkin_path(): string
     {
         return $this->skin_path;
     }
-    
-    
-    
 }

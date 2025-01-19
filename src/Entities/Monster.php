@@ -11,7 +11,7 @@ final class Monster
     /**
      * Get the value of hp
      */
-    public function getHp()
+    public function getHp(): int
     {
         return $this->hp;
     }
@@ -21,7 +21,7 @@ final class Monster
      *
      * @return  self
      */
-    public function setHp($hp)
+    public function setHp($hp): self
     {
 
         $this->hp = $hp;
@@ -32,7 +32,7 @@ final class Monster
     /**
      * Get the value of type
      */
-    public function getType()
+    public function getType(): string
     {
         return $this->type;
     }
@@ -42,21 +42,20 @@ final class Monster
      *
      * @return self
      */
-    public function setRandomType()
+    public function setRandomType(): self
     {
         $types = ["Gobelin", "Orc", "UrukHai"];
         shuffle($types);
 
         $this->type = $types[0];
 
-        return $this; 
-
+        return $this;
     }
 
     /**
      * Get the value of ad
      */
-    public function getAd()
+    public function getAd(): int
     {
         return $this->ad;
     }
@@ -66,14 +65,14 @@ final class Monster
      *
      * @return  self
      */
-    public function setAd($ad)
+    public function setAd($ad): self
     {
         $this->ad = $ad;
 
         return $this;
     }
 
-    public function generateHp()
+    public function generateHp(): self
     {
         if ($this->type == 'Gobelin') {
             $this->hp = rand(30, 40);
@@ -86,7 +85,7 @@ final class Monster
         return $this;
     }
 
-    public function generateAd()
+    public function generateAd(): self
     {
         $this->ad = rand(5, 20);
         return $this;
@@ -97,7 +96,7 @@ final class Monster
     /**
      * Get the value of skin_path
      */
-    public function getSkin_path()
+    public function getSkin_path(): string
     {
         return $this->skin_path;
     }
@@ -109,13 +108,13 @@ final class Monster
      *
      * @return  self
      */
-    public function setSkin_path($skin_path)
+    public function setSkin_path(string $skin_path): self
     {
         $this->skin_path = $skin_path;
         return $this;
     }
 
-    public function generateSkin_path()
+    public function generateSkin_path(): self
     {
         if ($this->type == 'Gobelin') {
             $this->skin_path = "./assets/img/Gobelin.png";
