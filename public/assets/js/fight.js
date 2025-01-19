@@ -37,7 +37,8 @@ function handleAttack(event) {
       attackButton.setAttribute("disabled", "disabled");
       setTimeout(() => {
         alert("Le HERO a gagné");
-        
+        let win = 1;
+        JSON.parse(win);
       }, 2);
     } else if (first2HeroHp <= 0) {
       console.log("Fini");

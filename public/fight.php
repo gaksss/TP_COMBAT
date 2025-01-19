@@ -20,6 +20,8 @@ $monster->generateAd();
 $monster->generateHp();
 $monster->generateSkin_path();
 
+
+;
 ?>
 
 <!DOCTYPE html>
