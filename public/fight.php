@@ -29,7 +29,8 @@ $monster = $_SESSION['monster'];
 </head>
 
 <body>
-
+<?php var_dump($hero->getHealth()) ?>
+<?php var_dump($monster->getHealth()) ?>
     <?php while ($hero->getHealth() > 0 && $monster->getHealth() > 0): ?>
         <p><?= $hero->getName() ?> attaque <?= $monster->getName() ?></p>
 
@@ -47,7 +48,8 @@ $monster = $_SESSION['monster'];
         <?php endif ?>
 
     <?php endwhile ?>
-
+<?php var_dump($hero->getHealth()) ?>
+<?php var_dump($monster->getHealth()) ?>
 </body>
 
 </html>
