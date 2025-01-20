@@ -1,6 +1,5 @@
 <?php
 
-
 abstract class AbstractRepository
 {
     protected PDO $pdo;

@@ -1,27 +1,22 @@
 <?php
 
-
-include_once '../utils/autoloader.php';
-require_once '../utils/db.php';
+require_once '../utils/autoloader.php';
 
 session_start();
 
-$monster = new Monster();
+/**
+ * @var Hero $hero
+ */
+$hero = $_SESSION['hero'];
+
+/**
+ * @var Monster $monster
+ */
+$monster = $_SESSION['monster'];
 
 
 
-$manager = new FightsManager();
 
-$hero = $manager->getHeroInfo();
-
-
-$monster->setRandomType();
-$monster->generateAd();
-$monster->generateHp();
-$monster->generateSkin_path();
-
-
-;
 ?>
 
 <!DOCTYPE html>
@@ -31,22 +26,28 @@ $monster->generateSkin_path();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./assets/styles/style.css">
-    <script defer src="./assets/js/fight.js"></script>
 </head>
 
 <body>
-    <article class="monsterCard">
-        <img class="monsterImg" src="<?= $monster->getSkin_path() ?>" alt="">
-        <h3 id="monsterHp"><?= $monster->getHp() ?>PV</h3>
-        <h3 id="monsterAd"><?= $monster->getAd() ?>AD</h3>
-    </article>
 
-    <article class="heroCard">
-        <img src="<?= $hero->getSkin_path() ?>" alt="Modele du nain" class="hero">
-        <h3 id="heroHp"><?= $hero->getHp() ?>PV</h3>
-    </article>
-    <button id="attackButton">Attaquer</button>
+    <?php while ($hero->getHealth() > 0 && $monster->getHealth() > 0): ?>
+        <p><?= $hero->getName() ?> attaque <?= $monster->getName() ?></p>
+
+        <?php $hero->hit($monster) ?>
+
+        <p><?= $hero->getName() ?> inflige 15 dégats</p>
+
+        <!-- Si le monstre ne survit pas à l'attaque du héros -->
+        <?php if ($monster->getHealth() > 0): ?>
+            <p><?= $monster->getName() ?> attaque <?= $hero->getName() ?></p>
+
+            <?php $monster->hit($hero) ?>
+
+            <p><?= $monster->getName() ?> inflige 15 dégats</p>
+        <?php endif ?>
+
+    <?php endwhile ?>
+
 </body>
 
 </html>

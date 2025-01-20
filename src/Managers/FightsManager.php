@@ -7,7 +7,7 @@ final class FightsManager
 
     public function __construct()
     {
-        $this->heroesRepository = new HeroesRepository();
+        $this->heroesRepository = new HeroRepository();
     }
 
 
@@ -17,7 +17,6 @@ final class FightsManager
 
         $hero = $this->heroesRepository->find(1);
         $hero->getName();
-        $hero->getSkin_path();
 
         return $hero;
     }
