@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <header>
-            <img src="logo.png" alt="Logo" class="logo">
+            <img src="./assets/img/Logo.webp" alt="Logo" class="logo">
             <h1>TP Combat</h1>
             <p>Un jeu de combat au tour par tour en PHP pour apprendre les bases de la POO</p>
         </header>
@@ -20,6 +20,7 @@
                 <input type="text" name="name" id="name" placeholder="Entrez un nom" required>
                 <button type="submit">Créer</button>
             </form>
+            <a class="existing-heroes" href="./choice-hero.php">Choisir un héro déjà existant</a>
         </main>
     </div>
 </body>

@@ -49,11 +49,12 @@ abstract class Character
 
     public function hit(Character $target)
     {
+        $randomDmg = random_int(10, 15);
 
-        if($target->getHealth() - 15 <= 0){
+        if($target->getHealth() - $randomDmg <= 0){
             $target->setHealth(0);
         } else {
-            $target->setHealth($target->getHealth() - 15);
+            $target->setHealth($target->getHealth() - $randomDmg);
         }
         
     }

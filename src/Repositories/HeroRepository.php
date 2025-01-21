@@ -4,7 +4,7 @@ final class HeroRepository extends AbstractRepository
 {
     public function __construct()
     {
-        parent::__construct(); 
+        parent::__construct();
     }
 
 
@@ -15,7 +15,7 @@ final class HeroRepository extends AbstractRepository
         $stmt->execute(['id' => $id]);
         $heroData = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if(!$heroData) {
+        if (!$heroData) {
             return null;
         }
 
@@ -30,7 +30,7 @@ final class HeroRepository extends AbstractRepository
 
         $heroes = [];
 
-        foreach($heroDatas as $heroData){
+        foreach ($heroDatas as $heroData) {
             $heroes[] = HeroMapper::mapToObject($heroData);
         }
 

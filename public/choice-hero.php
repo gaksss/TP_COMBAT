@@ -20,21 +20,25 @@ if (!$heroes) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TP COMBAT</title>
+    <link rel="stylesheet" href="./assets/styles/style.css">
 </head>
 
 <body>
-    <?php
-    /**
-     * @var Hero $hero
-     */
-    foreach ($heroes as $hero):  ?>
+    <div class="container-choice">
+        <?php
+        /**
+         * @var Hero $hero
+         */
+        foreach ($heroes as $hero):  ?>
 
-        <form action="../process/choice-hero-process.php" method="POST">
-            <input type="hidden" name="hero_id" value="<?= htmlspecialchars($hero->getId()) ?>">
-            <input type="submit" value="<?= htmlspecialchars($hero->getName()) ?>">
-        </form>
+            <form class="hero-selection" action="../process/choice-hero-process.php" method="POST">
+                <input type="hidden" name="hero_id" value="<?= htmlspecialchars($hero->getId()) ?>">
+                <input type="submit" value="<?= htmlspecialchars($hero->getName()) ?>">
+                <h2><?= $hero->getHealth() ?>PV</h2>
+            </form>
 
-    <?php endforeach  ?>
+        <?php endforeach  ?>
+    </div>
 </body>
 
 </html>
