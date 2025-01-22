@@ -9,19 +9,26 @@ function handleAttack(event) {
   goblinImg.classList.add("monster-containerHit");
   heroImg.classList.remove("hero");
   goblinImg.classList.remove("goblin");
+  setTimeout(() => {
+    heroImg.classList.add("hero");
+    goblinImg.classList.add("goblin");
+    heroImg.classList.remove("hero-containerHit");
+    goblinImg.classList.remove("monster-containerHit");
+  }, 100);
 
-  fetch("../src/Mappers/HeroMapper.php")
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Erreur dans la requête");
-      }
-      return response.json();
-    })
-    .then((data) => {
-      document.querySelector("#heroPv").innerHTML = `${data.health}`;
-
-    })
-    .catch((error) => {
-      console.error("Erreur :", error);
-    });
+  $.ajax({
+    url: "../process/fight-process.php",
+    method: "POST",
+    success: function (result) {
+      // Assuming the result contains the updated health values
+      const data = JSON.parse(result);
+      document.querySelector(".heroPv").textContent = data.heroHealth + "PV";
+      document.querySelector(
+        ".monster-container h2:nth-of-type(2)"
+      ).textContent = data.monsterHealth + "PV";
+    },
+    error: function (xhr, status, error) {
+      console.error("AJAX Error: ", status, error);
+    },
+  });
 }

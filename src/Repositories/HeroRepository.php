@@ -45,4 +45,23 @@ final class HeroRepository extends AbstractRepository
             HeroMapper::mapToArray($hero)
         );
     }
+
+    public function updateHp(int $id, int $health): void
+    {
+        $sql = "UPDATE hero SET health = :health WHERE id = :id";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([
+            'health' => $health,
+            'id' => $id
+        ]);
+    }
+
+    public function killHero(int $id)
+    {
+        $sql = "DELETE FROM `hero` WHERE `hero`.`id` = :id";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([
+            'id' => $id
+        ]);
+    }
 }

@@ -16,7 +16,6 @@ $monster = $_SESSION['monster'];
 
 
 
-
 ?>
 
 <!DOCTYPE html>
@@ -28,15 +27,16 @@ $monster = $_SESSION['monster'];
     <title>Document</title>
     <link rel="stylesheet" href="./assets/styles/style.css">
     <script defer src="./assets/js/fight-animation.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 </head>
 
 <body class="fight-body">
     <main>
 
 
-        <form action="../process/fight-process.php">
-            <input id="attackBtn" type="submit" value="Attaquer">
-        </form>
+
+        <button id="attackBtn">Attaquer</button>
+
         <div class="hero-container">
             <h2><?= $hero->getName() ?></h2>
             <h2 class="heroPv"><?= $hero->getHealth() ?>PV</h2>
@@ -47,6 +47,7 @@ $monster = $_SESSION['monster'];
             <h2><?= $monster->getHealth() ?>PV</h2>
             <img class="goblin" src="./assets/img/Gobelin.png"></img>
         </div>
+
     </main>
 </body>
 
