@@ -1,6 +1,7 @@
 <?php
 require_once '../utils/autoloader.php';
 
+session_start();
 
 // VALIDATION DE FORMULAIRE
 
@@ -12,12 +13,12 @@ if (!$hero) {
     exit;
 }
 
-$monster = new Goblin();
+$gobelin = new Goblin();
 
 session_start();
 
 $_SESSION['hero'] = $hero;
-$_SESSION['monster'] = $monster;
+$_SESSION['gobelin'] = $gobelin;
 
 header('Location: ../public/fight.php');
 exit;

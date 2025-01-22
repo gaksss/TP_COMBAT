@@ -12,8 +12,9 @@ $hero = $_SESSION['hero'];
 /**
  * @var Monster $monster
  */
-$monster = $_SESSION['monster'];
+$gobelin = $_SESSION['gobelin'];
 
+$imgHero = $_POST['imgHero'];
 
 
 ?>
@@ -40,12 +41,12 @@ $monster = $_SESSION['monster'];
         <div class="hero-container">
             <h2><?= $hero->getName() ?></h2>
             <h2 class="heroPv"><?= $hero->getHealth() ?>PV</h2>
-            <img class="hero" src="./assets/img/chevalier.png"></img>
+            <img class="hero" src="<?= $_POST["imgHero"]?>"></img>
         </div>
         <div class="monster-container">
-            <h2><?= $monster->getName() ?></h2>
-            <h2><?= $monster->getHealth() ?>PV</h2>
-            <img class="goblin" src="./assets/img/Gobelin.png"></img>
+            <h2><?= $gobelin->getName() ?></h2>
+            <h2><?= $gobelin->getHealth() ?>PV</h2>
+            <img class="goblin" src="<?=$gobelin->getSkin_path()?>"></img>
         </div>
 
     </main>

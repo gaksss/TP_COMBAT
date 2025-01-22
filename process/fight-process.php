@@ -13,18 +13,19 @@ $hero = $_SESSION['hero'];
 /**
  * @var Monster $monster
  */
-$monster = $_SESSION['monster'];
+$gobelin = $_SESSION['gobelin'];
 
-if ($hero->getHealth() > 0 && $monster->getHealth() > 0) {
-    $hero->hit($monster);
-    if ($monster->getHealth() > 0) {
-        $monster->hit($hero);
+if ($hero->getHealth() > 0 && $gobelin->getHealth() > 0) {
+    $hero->hit($gobelin);
+    if ($gobelin->getHealth() > 0) {
+        $gobelin->hit($hero);
     }
 }
 
+
 // Mettre à jour les valeurs de santé dans la session
 $_SESSION['hero'] = $hero;
-$_SESSION['monster'] = $monster;
+$_SESSION['gobelin'] = $gobelin;
 
 $heroRepository = new HeroRepository();
 
@@ -37,5 +38,5 @@ if ($hero->getHealth() == 0) {
 // Retourner les valeurs de santé mises à jour en JSON
 echo json_encode([
     'heroHealth' => $hero->getHealth(),
-    'monsterHealth' => $monster->getHealth()
+    'monsterHealth' => $gobelin->getHealth()
 ]);

@@ -6,7 +6,8 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f8f9fa;
+  background-image: url("../img/fond-plage.gif");
+  background-size: 100vw 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,7 +133,7 @@ header p {
   background-repeat: no-repeat;
 }
 
-.monster-container{
+.monster-container {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -142,13 +143,12 @@ header p {
   animation: animateChar 1s infinite;
 }
 
-.monster-container h2{
+.monster-container h2 {
   padding-left: 180px;
   color: white;
 }
 
-
-.hero-container{
+.hero-container {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -158,25 +158,51 @@ header p {
   animation: animateChar 1s infinite;
 }
 
-.hero-container h2{
+.hero-container h2 {
   padding-left: 180px;
   color: white;
 }
 
-@keyframes animateChar 
-{
+.hero {
+  width: 500px;
+}
+
+@keyframes animateChar {
   from {
     bottom: 0;
   }
-   to {
+  to {
     bottom: 2px;
-   }
-  
+  }
 }
 
-.hero-containerHit{
+.hero-containerHit {
   filter: blur(5px) hue-rotate(90deg);
 }
-.monster-containerHit{
+.monster-containerHit {
   filter: blur(5px) hue-rotate(90deg);
+}
+
+
+#knight {
+  width: 500px;
+}
+
+#elfe{
+  width: 500px;
+}
+#nain{
+  width: 500px;
+}
+
+.container-choice button {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+button img {
+  width: 150px; /* Exemple de taille */
+  height: auto;
 }

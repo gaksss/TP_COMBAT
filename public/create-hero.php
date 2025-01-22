@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TP Combat</title>
     <link rel="stylesheet" href="./assets/styles/style.css">
 </head>
+
 <body>
     <div class="container">
         <header>
@@ -18,10 +20,12 @@
                 <h2>Créez votre héros</h2>
                 <label for="name">Nom :</label>
                 <input type="text" name="name" id="name" placeholder="Entrez un nom" required>
+
                 <button type="submit">Créer</button>
             </form>
             <a class="existing-heroes" href="./choice-hero.php">Choisir un héro déjà existant</a>
         </main>
     </div>
 </body>
+
 </html>

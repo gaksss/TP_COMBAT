@@ -1,7 +1,7 @@
 <?php
 
 require_once '../utils/autoloader.php';
-
+session_start();
 $heroRepository = new HeroRepository();
 
 $heroes = $heroRepository->findAll();
@@ -34,6 +34,7 @@ if (!$heroes) {
             <form class="hero-selection" action="../process/choice-hero-process.php" method="POST">
                 <input type="hidden" name="hero_id" value="<?= htmlspecialchars($hero->getId()) ?>">
                 <input type="submit" value="<?= htmlspecialchars($hero->getName()) ?>">
+                
                 <h2><?= $hero->getHealth() ?>PV</h2>
             </form>
 

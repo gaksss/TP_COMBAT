@@ -10,6 +10,7 @@ class HeroMapper
             $datas['name'],
             $datas['health'],
             $datas['healthMax'],
+            
         );
     }
 
@@ -19,7 +20,8 @@ class HeroMapper
             'name' => $hero->getName(),
             'health' => $hero->getHealth(),
             'healthMax' => $hero->getHealthMax(),
-            'id' => $hero->getId(),
+            
+            
         ];
     }
 }

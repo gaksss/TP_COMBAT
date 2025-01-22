@@ -64,4 +64,13 @@ final class HeroRepository extends AbstractRepository
             'id' => $id
         ]);
     }
+    public function affectSkin(int $id, string $skin_path): void
+    {
+        $sql = "UPDATE hero SET skin_path = :skin_path WHERE id = :id";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([
+            'skin_path' => $skin_path,
+            'id' => $id
+        ]);
+    }
 }

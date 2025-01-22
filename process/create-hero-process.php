@@ -2,6 +2,8 @@
 
 require_once '../utils/autoloader.php';
 
+
+session_start();
 // VALIDATION DE FORMULAIRE
 
 

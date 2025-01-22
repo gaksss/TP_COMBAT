@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : dim. 19 jan. 2025 à 16:39
+-- Généré le : mer. 22 jan. 2025 à 15:45
 -- Version du serveur : 9.1.0
 -- Version de PHP : 8.3.14
 
@@ -31,17 +31,18 @@ DROP TABLE IF EXISTS `hero`;
 CREATE TABLE IF NOT EXISTS `hero` (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
-  `hp` int NOT NULL,
+  `health` int NOT NULL,
+  `healthMax` int NOT NULL,
   `skin_path` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `hero`
 --
 
-INSERT INTO `hero` (`id`, `name`, `hp`, `skin_path`) VALUES
-(1, 'Nain', 60, './assets/img/Nain.jpg');
+INSERT INTO `hero` (`id`, `name`, `health`, `healthMax`, `skin_path`) VALUES
+(15, 'Clement', 100, 100, '');
 
 -- --------------------------------------------------------
 
