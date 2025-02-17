@@ -3,7 +3,7 @@ try {
 
 
     $host = "localhost";
-    $dbname = "tp_combat";
+    $dbname = "gaksss_tp_combat";
     $login = "root";
     $password = "";
 
