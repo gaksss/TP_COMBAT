@@ -14,7 +14,7 @@ $hero = $_SESSION['hero'];
  */
 $gobelin = $_SESSION['gobelin'];
 
-$imgHero = $_POST['imgHero'];
+// $imgHero = $_POST['imgHero'];
 
 
 ?>
@@ -41,7 +41,7 @@ $imgHero = $_POST['imgHero'];
         <div class="hero-container">
             <h2><?= $hero->getName() ?></h2>
             <h2 class="heroPv"><?= $hero->getHealth() ?>PV</h2>
-            <img class="hero" src="<?= $_POST["imgHero"]?>"></img>
+            <img class="hero" src="./assets/img/chevalier.png"></img>
         </div>
         <div class="monster-container">
             <h2><?= $gobelin->getName() ?></h2>

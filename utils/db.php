@@ -4,8 +4,8 @@ try {
 
     $host = "localhost";
     $dbname = "gaksss_tp_combat";
-    $login = "root";
-    $password = "";
+    $login = "gaksss";
+    $password = "clementdb404";
 
     $pdo = new PDO("mysql:host={$host};dbname={$dbname}", $login, $password);
 } catch (PDOException $error) {
